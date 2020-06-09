@@ -8,5 +8,5 @@
 <li>çHow to create, update and delete shell variables</li>
 <li>What are the roles of the following reserved variables: HOME, PATH, PS1</li>
 <li>What are special parameters</li>
-<li>What is the special parameter $??</li>
+<li>What is the special parameter $?</li>
 </ul>
