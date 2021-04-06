@@ -1,0 +1,1 @@
+This is the project to learn about "Puppet" and how to use it
