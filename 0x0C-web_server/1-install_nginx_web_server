@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Check if nginx exists and if not the install
+if ! [ -x "$(command -v nginx )" ]
+then
+    apt update -y && apt install upgrade -y && apt install -y nginx;
+fi
+
+
