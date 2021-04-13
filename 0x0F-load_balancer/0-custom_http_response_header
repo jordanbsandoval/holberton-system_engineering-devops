@@ -6,7 +6,7 @@ apt-get -y install nginx
 chmod 777 /var/www/html/index.nginx-debian.html
 echo 'Holberton School' > /var/www/html/index.nginx-debian.html
 chmod 644 /var/www/html/index.nginx-debian.html
-sed -i "/server_name _;/ a \\\nrewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
+sed -i "/server_name _;/ a \\\nrewrite ^/redirect_me  https://www.youtube.com/watch?v=lvxRaN7Mud8permanent;" /etc/nginx/sites-available/default
 touch /var/www/html/custom_404.html
 chmod 777 /var/www/html/custom_404.html
 echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
