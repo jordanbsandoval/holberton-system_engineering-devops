@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # changue ip
 cp /etc/hosts ~/host.new
-sed 's/127.*$/127.0.0.2/\tlocalhost' ~/host.new
-echo "8.8.8.8\tfacebook"
+sed 's/127.*$/127.0.0.2 localhost' ~/host.new
+echo "8.8.8.8 facebook" >> ~/host.new
 cp -f ~/host.new /etc/hosts
