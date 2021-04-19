@@ -1,22 +1,11 @@
 #!/usr/bin/env bash
-# Check if nginx exists and if not the install
-if ! [ -x "$(command -v nginx )" ]
-then
-    apt update -y && apt install upgrade -y && apt install -y nginx;
-fi
+# install nginx
+apt update -y && apt install -y nginx;
 
-# Check if the file exist /etc/nginx/sites-enabled/default that is the configuration file the ports
+# change content of default_server
+sudo chmod 666 /var/www/html/index.nginx-debian.html
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo chmod 644 /var/www/html/index.nginx-debian.html
 
-if [ -f /etc/nginx/sites-enabled/default ]
-then
-    sed -i '/listen [0-9]* default_server/c\\tlisten 80 default_server;' /etc/nginx/sites-enabled/default;
-fi
-
-# check if the file exist /var/www/html/index.nginx-debian.html and update it if so
-
-if [ -f /var/www/html/index.nginx-debian.html ]
-then
-    ser -i 's/Welcome to nginx!/Holberton School/g' /var/www/html/index.nginx-debian.html
-fi
-
+# star service nginx
 service nginx start;
