@@ -5,4 +5,18 @@ then
     apt update -y && apt install upgrade -y && apt install -y nginx;
 fi
 
+# Check if the file exist /etc/nginx/sites-enabled/default that is the configuration file the ports
 
+if [ -f /etc/nginx/sites-enabled/default ]
+then
+    sed -i '/listen [0-9]* default_server/c\\tlisten 80 default_server;' /etc/nginx/sites-enabled/default;
+fi
+
+# check if the file exist /var/www/html/index.nginx-debian.html and update it if so
+
+if [ -f /var/www/html/index.nginx-debian.html ]
+then
+    ser -i 's/Welcome to nginx!/Holberton School/g' /var/www/html/index.nginx-debian.html
+fi
+
+service nginx start;
