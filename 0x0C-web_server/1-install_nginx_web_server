@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # install nginx
-apt-get update -y && apt-get install -y nginx;
+apt-get update  
+apt-get install -y nginx;
 
 # change content of default_server
 sudo chmod 666 /var/www/html/index.nginx-debian.html
