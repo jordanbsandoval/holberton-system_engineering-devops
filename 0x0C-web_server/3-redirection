@@ -13,4 +13,4 @@ redirect="\\\n\t# Redirection\n\trewrite ^/redirect_me/(.*)$ https://www.youtube
 sed -i "/server_name _;/ a $redirect" /etc/nginx/sites-available/default
 
 # star service nginx
-service nginx start;
+service nginx restart;
