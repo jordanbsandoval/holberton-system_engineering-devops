@@ -8,4 +8,4 @@ apt-get update
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 
 # star service nginx
-service nginx start;
+/etc/init.d/nginx restart;
