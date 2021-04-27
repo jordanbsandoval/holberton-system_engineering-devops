@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# install nginx else exist
+if ! [ -x "$(command -v nginx)" ]
+then
+	apt-get update
+	apt-get install -y nginx;
+    apt-get update
+fi
+
+# change content of default_server
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+
+# redirect
+command="\\\n\t# Redirection\n\trewrite ^/redirect_me/(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sed -i "/server_name _;/a$command" /etc/nginx/sites-available/default
+
+# setup error page
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+com_error="\\\n\t# Error page\n\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
+sed -i "/rewrite/ a $com_error" /etc/nginx/sites-available/default
+
+# star service nginx
+sudo /etc/init.d/nginx restart;
