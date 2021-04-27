@@ -2,10 +2,10 @@
 # install nginx
 apt-get update  
 apt-get install -y nginx;
+apt-get update
 
 # change content of default_server
-sudo chmod 666 /var/www/html/index.nginx-debian.html
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-sudo chmod 644 /var/www/html/index.nginx-debian.html
+
 # star service nginx
 service nginx start;
