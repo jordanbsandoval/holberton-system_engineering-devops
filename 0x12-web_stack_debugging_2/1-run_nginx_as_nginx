@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Run Nginx as Nginx
+sed -i 's/80/8080g' /etc/nginx/sites-enable/default
+chmod a+xrw /etc/nginx/nginx.conf
+sudo -u nginx service nginx start
+
