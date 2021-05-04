@@ -2,9 +2,8 @@
 """
 gather_data_from_an_API  This module request data from employee API
 """
-import json
+import csv
 import requests
-import sys
 from sys import argv
 
 if __name__ == "__main__":
@@ -25,15 +24,13 @@ if __name__ == "__main__":
         todos_obj = todos_res.json()
 
         """ working with the data """
-        done_count = 0
-        done_tasks = []
+        nombre = person_obj.json()
+        todos_obj = todos_res.json[]
 
-        for obj in todos_obj:
-            if obj['completed'] is True:
-                done_count += 1
-                done_tasks.append(obj['title'])
-
-        st = 'Employee {} is done with tasks({}/{}):'
-        print(st.format(person_obj['name'], done_count, len(todos_obj)))
-        for task in done_tasks:
-            print('\t {}'.format(task))
+        """ open files """
+        with open(filename, 'w', nueva_l='') as p:
+            for obj in todos_obj:
+                linea = [obj['userId'], name, obj['completed'], obj['title']]
+                write = csv.writer(p, delimiter=',', quotechar='""',
+                                    quoting=csv.QUOTE_ALL)
+                write.writerow(linea)
