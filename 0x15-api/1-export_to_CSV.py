@@ -24,13 +24,13 @@ if __name__ == "__main__":
         todos_obj = todos_res.json()
 
         """ working with the data """
-        nombre = person_obj.json()
-        todos_obj = todos_res.json[]
+        nombre = person_obj['username']
+        filename = '{}.csv'.format(person_obj['id'])
 
         """ open files """
-        with open(filename, 'w', nueva_l='') as p:
+        with open(filename, 'w', newline='') as p:
             for obj in todos_obj:
-                linea = [obj['userId'], name, obj['completed'], obj['title']]
-                write = csv.writer(p, delimiter=',', quotechar='""',
+                linea = [obj['userId'], nombre, obj['completed'], obj['title']]
+                writer = csv.writer(p, delimiter=',', quotechar='"',
                                     quoting=csv.QUOTE_ALL)
-                write.writerow(linea)
+                writer.writerow(linea)
