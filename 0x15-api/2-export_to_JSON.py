@@ -39,4 +39,3 @@ if __name__ == "__main__":
 
         with open(filename, 'w') as p:
             json.dump({person_obj['id']: result}, p)
-
