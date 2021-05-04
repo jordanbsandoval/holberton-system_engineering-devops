@@ -3,7 +3,7 @@
 Python script to export data in the JSON format.
 """
 
-import csv
+import json
 import requests
 from sys import argv
 
@@ -26,9 +26,9 @@ if __name__ == "__main__":
         todos_obj = todos_res.json()
 
         """ working with the data """
+        filename = '{}.json'.format(person_obj['id'])
         username = person_obj['username']
         result = []
-        filename = '{}.json'.format(person_obj['id'])
 
         for obj in todos_obj:
             task = {}
